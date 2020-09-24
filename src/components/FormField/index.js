@@ -1,4 +1,5 @@
 /* eslint-disable react/no-typos */
+// porta do banco sempre roda na porta 3000 por padrão , tivemos que trocar para a  porta 8080
 import { PropTypes } from 'prop-types';
 import React from 'react';
 import styled, { css } from 'styled-components';
@@ -74,13 +75,11 @@ function FormField({
   label, type, name, value, onChange,
 }) {
   const fieldId = `id_${name}`;
-  const isTextArea = type === 'textarea'
+  const isTextArea = type === 'textarea';
   const tag = isTextArea ? 'textarea' : 'input';
   return (
     <FormFieldWrapper>
       <Label htmlFor={fieldId}>
-        {label}
-        :
         <Input
           as={tag}
           id={fieldId}
@@ -89,6 +88,10 @@ function FormField({
           name={name}
           onChange={onChange}
         />
+        <Label.Text>
+          {label}
+          :
+        </Label.Text>
       </Label>
     </FormFieldWrapper>
   );

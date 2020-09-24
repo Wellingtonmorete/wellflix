@@ -55,7 +55,7 @@ function CadastroCategoria() {
         />
 
         <FormField
-          label="Descrição:"
+          label="Descrição"
           type="textarea"
           name="descricao"
           value={values.descricao}
@@ -76,7 +76,7 @@ function CadastroCategoria() {
 
       <ul>
         {categorias.map((categoria, indice) => (
-          <li key={`${categoria}${indice}`}>
+          <li key={`${categoria.nome}`}>
             {categoria.nome}
           </li>
         ))}
